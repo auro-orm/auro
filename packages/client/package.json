@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "author": "Igor Tomic",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha.0",
   "scripts": {
     "build": "tsc",
     "test": "jest --silent=false",
@@ -14,7 +14,7 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@auro-orm/core": "0.1.0"
+    "@auro-orm/core": "^0.1.1-alpha.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
