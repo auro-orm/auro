@@ -14,7 +14,8 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@auro-orm/core": "^0.1.1"
+    "@auro-orm/core": "^0.1.1",
+    "@auro-orm/cli": "^0.1.1"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
