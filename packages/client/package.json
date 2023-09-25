@@ -17,6 +17,9 @@
     "@auro-orm/cli": "^0.1.2",
     "@auro-orm/core": "^0.1.2"
   },
+  "paths": {
+    "@auro-orm/core": ["packages/core/src/*"]
+  },
   "devDependencies": {
     "@types/jest": "^29.5.5",
     "@types/node": "^20.6.0",
@@ -34,7 +37,7 @@
     "access": "public"
   },
   "files": [
-    "dist"
+    "../../dist/client/*"
   ],
   "gitHead": "e22c6a5064412e800126620d494b5ac69726e132"
 }
