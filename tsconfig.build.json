@@ -10,9 +10,6 @@
       "esModuleInterop": true,
       "moduleResolution": "node",
     },
-    "include": [
-      "packages/**/src/**/*.ts", // Include source files for packages
-    ],
     "paths": {
       "@auro-orm/*": ["./packages/*/src"]
     }
