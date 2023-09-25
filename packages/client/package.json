@@ -6,16 +6,16 @@
   "types": "dist/index.d.ts",
   "author": "Igor Tomic",
   "license": "Apache-2.0",
-  "version": "0.1.3-alpha.0",
+  "version": "0.1.0",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "test": "jest --silent=false",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@auro-orm/cli": "^0.1.3-alpha.0",
-    "@auro-orm/core": "^0.1.3-alpha.0"
+    "@auro-orm/cli": "^0.1.0",
+    "@auro-orm/core": "^0.1.0"
   },
   "paths": {
     "@auro-orm/core": [
@@ -36,10 +36,11 @@
     "typescript": "^5.2.2"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "dist"
   },
   "files": [
-    "../../dist/client/*"
+    "dist/packages/client/src/*"
   ],
   "gitHead": "e22c6a5064412e800126620d494b5ac69726e132"
 }
