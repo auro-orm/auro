@@ -1,6 +1,6 @@
 {
   "name": "@auro-orm/cli",
-  "version": "0.1.2",
+  "version": "0.1.3-alpha.0",
   "description": "Auro CLI tool for generating and managing Auro ORM functionalities.",
   "main": "dist/index.js",
   "license": "Apache-2.0",
@@ -17,12 +17,14 @@
     "auro": "dist/index.js"
   },
   "dependencies": {
-    "@auro-orm/core": "^0.1.2",
+    "@auro-orm/core": "^0.1.3-alpha.0",
     "chalk": "^4.1.2",
     "commander": "^10.0.1"
   },
   "paths": {
-    "@auro-orm/core": ["packages/core/src/*"]
+    "@auro-orm/core": [
+      "packages/core/src/*"
+    ]
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
