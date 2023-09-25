@@ -1,0 +1,58 @@
+name: Monorepo Pull Request Tests
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Determine Changed Packages
+        id: changed-packages
+        run: |
+          yarn global add lerna
+          CHANGED_PACKAGES=$(lerna changed --json)
+          echo "::set-output name=changed_packages::${CHANGED_PACKAGES}"
+      
+      - name: Run Tests on Changed Packages
+        run: |
+          CHANGED_PACKAGES="${{ steps.changed-packages.outputs.changed_packages }}"
+          for package in $CHANGED_PACKAGES; do
+            lerna exec --scope $package -- yarn test  # Replace with your test script for each package
+          done
+
+  merge-blocker:
+    name: Merge Blocker
+    runs-on: ubuntu-latest
+    needs: test
+    if: ${{ github.event_name == 'pull_request' && always() && contains(needs.test.outputs.changed_packages, 'failure') }}
+
+    steps:
+      - name: Comment on Pull Request
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const comment = `Tests have failed for one or more changed packages. Please fix the issues in order to merge this pull request.`;
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

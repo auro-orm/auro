@@ -1,0 +1,32 @@
+{
+  "name": "@auro-orm/client",
+  "packageManager": "yarn@3.5.1",
+  "description": "Auro ORM client",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Igor Tomic",
+  "license": "MIT",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --silent=false",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "@auro-orm/core": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

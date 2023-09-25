@@ -1,0 +1,19 @@
+{
+  "exclude": ["**/*.test.ts", "**/*.stub.ts", "node_modules", "dist"],
+    "compilerOptions": {
+      "target": "ES2021",
+      "composite": true,
+      "declaration": true,
+      "outDir": "./dist", // or a different output directory
+      "rootDir": "./",    // or specify the source directory
+      "strict": true,     // Enable strict type checking
+      "esModuleInterop": true,
+      "moduleResolution": "node",
+    },
+    "include": [
+      "packages/**/src/**/*.ts", // Include source files for packages
+    ],
+    "paths": {
+      "@auro-orm/*": ["./packages/*/src"]
+    }
+}

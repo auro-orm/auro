@@ -1,0 +1,21 @@
+{
+  "name": "auro-orm",
+  "version": "0.1.0",
+  "description": "Auro ORM - type safe ORM for Aurora Serverless v1",
+  "author": "Igor Tomic",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build": "lerna run build --stream --concurrency 4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "lerna": "^7.3.0"
+  },
+  "dependencies": {}
+}

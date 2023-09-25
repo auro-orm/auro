@@ -1,0 +1,6 @@
+.yarn
+.env
+node_modules
+.pnp.cjs
+.pnp.*
+dist

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json", // Path to the root tsconfig.json
+  "compilerOptions": {
+    "outDir": "./dist",
+    "include": [
+      "src/**/*.ts" // Adjust the path to match your package's source code
+    ],
+    "paths": {
+      "@auro-orm/core": ["packages/core/src/*"]
+    }
+  }
+}
