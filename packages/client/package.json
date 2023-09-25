@@ -36,8 +36,7 @@
     "typescript": "^5.2.2"
   },
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   },
   "files": [
     "dist/packages/client/src/*"

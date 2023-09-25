@@ -21,11 +21,10 @@
     "@auro-orm/engine": "^0.1.6"
   },
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   },
   "files": [
     "dist/packages/core/src/*"
   ],
-  "gitHead": "e22c6a5064412e800126620d494b5ac69726e132"
+  "gitHead": "f6edc3c12462e0676e44d61a47117601fced800e"
 }
