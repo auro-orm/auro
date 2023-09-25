@@ -19,5 +19,8 @@
   "dependencies": {
     "@auro-orm/engine": "^0.1.6"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "gitHead": "e22c6a5064412e800126620d494b5ac69726e132"
 }
