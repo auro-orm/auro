@@ -1,6 +1,6 @@
 {
   "name": "@auro-orm/cli",
-  "version": "0.1.1",
+  "version": "0.1.2-alpha.0",
   "description": "Auro CLI tool for generating and managing Auro ORM functionalities.",
   "main": "dist/index.js",
   "license": "Apache-2.0",

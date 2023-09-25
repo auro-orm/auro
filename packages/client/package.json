@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "author": "Igor Tomic",
   "license": "Apache-2.0",
-  "version": "0.1.1",
+  "version": "0.1.2-alpha.0",
   "scripts": {
     "build": "tsc",
     "test": "jest --silent=false",
@@ -14,8 +14,8 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@auro-orm/core": "^0.1.1",
-    "@auro-orm/cli": "^0.1.1"
+    "@auro-orm/cli": "^0.1.2-alpha.0",
+    "@auro-orm/core": "^0.1.1"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
