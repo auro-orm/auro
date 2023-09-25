@@ -11,7 +11,7 @@ export class GenerateCommand {
         console.log(chalk.blue('🚀 AuroClient generated.'));
         console.log(
           chalk.yellow('You can now start using AuroClient in your code. Reference:'),
-          chalk.blue('https://your-auro-client-reference-url'),
+          chalk.blue('https://github.com/auro-orm/auro'),
         );
       })
       .catch((error) => {
