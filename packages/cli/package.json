@@ -21,6 +21,9 @@
     "chalk": "^4.1.2",
     "commander": "^10.0.1"
   },
+  "paths": {
+    "@auro-orm/core": ["packages/core/src/*"]
+  },
   "devDependencies": {
     "@types/jest": "^29.5.5",
     "@types/node": "^16.0.0",
@@ -38,7 +41,7 @@
     "access": "public"
   },
   "files": [
-    "dist"
+    "../../dist/cli/*"
   ],
   "gitHead": "e22c6a5064412e800126620d494b5ac69726e132"
 }
