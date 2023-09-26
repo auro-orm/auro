@@ -25,7 +25,7 @@ After installing Auro ORM create dotenv file with:
 RESOURCE_ARN=
 SECRET_ARN=
 DATABASE=
-REGION=eu-
+REGION=
 SCHEMA=
 # If your schema has - in name you should add env variable like this SCHEMA='"my-schema"'
 ```
