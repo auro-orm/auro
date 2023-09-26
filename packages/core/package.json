@@ -1,12 +1,16 @@
 {
   "name": "@auro-orm/core",
   "packageManager": "yarn@3.5.1",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "license": "Apache-2.0",
   "scripts": {
     "build": "tsc -p tsconfig.build.json"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/node": "^20.6.2",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
@@ -19,12 +23,5 @@
   },
   "dependencies": {
     "@auro-orm/engine": "^0.1.6"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist/packages/core/src/*"
-  ],
-  "gitHead": "f6edc3c12462e0676e44d61a47117601fced800e"
+  }
 }

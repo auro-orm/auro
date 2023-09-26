@@ -11,27 +11,6 @@ export function capitalizeFirstLetter(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export function createEnvFile() {
-  const projectRoot = process.cwd();
-  const envFilePath = path.join(projectRoot, '.env');
-
-  const envContent = `
-RESOURCE_ARN=
-SECRET_ARN=
-DATABASE=
-REGION=
-SCHEMA=
-#If your schema has '-' in it, you need to wrap it in quotes e.g. SCHEMA='"my-schema"'
-`;
-
-  try {
-    fs.writeFileSync(envFilePath, envContent);
-    console.log('.env file created successfully at', envFilePath);
-  } catch (err) {
-    console.error('Error creating .env file:', err);
-  }
-}
-
 export function mapDataType(dataType: string) {
   switch (dataType) {
     case 'bigint':
@@ -57,12 +36,34 @@ export function mapDataType(dataType: string) {
   }
 }
 
-export function createQuery(interfaceName: string, tableName: string) {
-  return `  ${interfaceName} = new Query<${capitalizeFirstLetter(interfaceName)}>('${tableName}');`;
+export function getStaticJs() {
+  const schema = process.env.SCHEMA || 'public';
+  return `"use strict";
+  Object.defineProperty(exports, "__esModule", { value: true });
+  exports.SCHEMA = void 0;
+  exports.SCHEMA = '${schema}';
+  const query_1 = require("./query-runner/query");`;
+}
+
+export function createQueryJs(interfaceName: string, tableName: string) {
+  return `  this.${interfaceName}= new query_1.Query('${tableName}');`;
+}
+
+export function createAuroClientJs(actionsString: string) {
+  return `class AuroClient {\n  constructor() {\n\n${actionsString}\n}\n
+  async queryRaw(query) {
+    return query_1.Query.raw(query);
+}
+  }
+exports.AuroClient = AuroClient;\n`;
+}
+
+export function createQuery(interfaceName: string) {
+  return `  ${interfaceName}: Query<${capitalizeFirstLetter(interfaceName)}>;`;
 }
 
 export function createAuroClient(actionsString: string) {
-  return `export class AuroClient {\n  constructor() {}\n\n${actionsString}\n
+  return `export declare class AuroClient {\n  constructor(); {}\n\n${actionsString}\n
     async queryRaw<T>(query: string): Promise<T | null> {
       return Query.raw<T>(query);
     }
@@ -77,7 +78,27 @@ export function writeIndexFile(result: string[]): void {
   const packageDir = require.resolve(`${packageName}/package.json`);
   const packageRoot = path.dirname(packageDir);
 
-  const filePathWithinPackage = 'src/index.ts';
+  const filePathWithinPackage = 'dist/index.d.ts';
+
+  const targetFilePath = path.join(packageRoot, filePathWithinPackage);
+
+  try {
+    fs.writeFileSync(targetFilePath, indexFile);
+    console.log(`Content written to ${targetFilePath}`);
+  } catch (err) {
+    console.error('Error writing content:', err);
+  }
+}
+
+export function writeIndexJsFile(result: string[]): void {
+  const indexFile = result.join('\n');
+  // const fileName = path.join(__dirname, '../../../client/src/index.ts', ''); // Local
+  const packageName = '@auro-orm/client';
+
+  const packageDir = require.resolve(`${packageName}/package.json`);
+  const packageRoot = path.dirname(packageDir);
+
+  const filePathWithinPackage = 'dist/index.js';
 
   const targetFilePath = path.join(packageRoot, filePathWithinPackage);
 

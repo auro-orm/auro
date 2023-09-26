@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { introspect } from '@auro-orm/core/src';
+import { introspect } from '@auro-orm/core';
 
 export class GenerateCommand {
   static execute() {
