@@ -4,9 +4,12 @@
   "description": "Auro ORM client",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": "Igor Tomic",
   "license": "Apache-2.0",
-  "version": "0.1.5",
+  "version": "0.2.1",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "jest --silent=false",
@@ -14,13 +17,8 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@auro-orm/cli": "^0.1.5",
-    "@auro-orm/core": "^0.1.5"
-  },
-  "paths": {
-    "@auro-orm/core": [
-      "packages/core/src/*"
-    ]
+    "@auro-orm/cli": "^0.2.0",
+    "@auro-orm/core": "^0.2.1"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
@@ -34,12 +32,5 @@
     "prettier": "^3.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist/packages/client/src/*"
-  ],
-  "gitHead": "e22c6a5064412e800126620d494b5ac69726e132"
+  }
 }

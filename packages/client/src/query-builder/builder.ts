@@ -34,12 +34,12 @@ export class QueryBuilder<T> {
       this.noreturn();
     }
 
-    if (params.limit) {
-      this.limit(params.limit);
+    if (params.take) {
+      this.limit(params.take);
     }
 
-    if (params.offset) {
-      this.offset(params.offset);
+    if (params.skip) {
+      this.offset(params.skip);
     }
 
     if (params.orderBy) {

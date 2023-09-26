@@ -89,5 +89,4 @@ export type DateField = DateFilter | string;
 export const SCHEMA = process.env.SCHEMA || 'public';
 
 export const Joins = {} as any;
-
 export type Connections<T> = never;

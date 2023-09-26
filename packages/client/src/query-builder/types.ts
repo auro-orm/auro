@@ -5,8 +5,8 @@ export type QueryBuilderParams<T> = {
   return?: ParamsField;
   avg?: ParamsField;
   groupBy?: string[];
-  limit?: number;
-  offset?: number;
+  skip?: number;
+  take?: number;
   orderBy?: { [K in keyof T]?: 'asc' | 'desc' };
   include?: ParamsField;
 };

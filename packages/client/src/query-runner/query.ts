@@ -1,4 +1,4 @@
-import { executeQuery, executeRawQuery } from '@auro-orm/core/src';
+import { executeQuery, executeRawQuery } from '@auro-orm/core';
 import { QueryBuilder } from '../query-builder/builder';
 import {
   DeleteManyParams,
