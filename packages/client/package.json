@@ -9,7 +9,7 @@
   ],
   "author": "Igor Tomic",
   "license": "Apache-2.0",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "jest --silent=false",
@@ -17,8 +17,8 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@auro-orm/cli": "^0.2.0",
-    "@auro-orm/core": "^0.2.1"
+    "@auro-orm/cli": "^0.2.1",
+    "@auro-orm/core": "^0.2.3"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",

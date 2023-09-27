@@ -14,6 +14,10 @@ export class QueryBuilder<T> {
   }
 
   fill(params: QueryBuilderParams<T>): this {
+    if (typeof params === 'undefined') {
+      params = {} as QueryBuilderParams<T>;
+    }
+
     if (params.where) {
       this.where(params);
     }

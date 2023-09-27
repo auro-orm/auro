@@ -39,7 +39,7 @@ export class Query<T> {
     return this.parseAndTransform(jsonEntity, (entity: Array<T>) => (entity ? entity[0] : null));
   }
 
-  async findMany<K extends keyof T>(params: FindManyParams<T, K>): Promise<Array<Pick<T, K>> | null> {
+  async findMany<K extends keyof T>(params?: FindManyParams<T, K>): Promise<Array<Pick<T, K>> | null> {
     const jsonEntity = await this.query('findmany', params);
     return this.parseAndTransform(jsonEntity, (entity: Array<Pick<T, K>> | null) => entity);
   }

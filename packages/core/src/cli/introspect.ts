@@ -87,6 +87,7 @@ async function createJoinForTables(tables: Table[], result: string[], jsLines: s
   }
   if (allJoins.length === 0) {
     result.push(`export declare const Joins: any;\n\nexport type Connections<T> = never;\n`);
+    jsLines.push(`exports.Joins = {}`);
     return;
   }
 

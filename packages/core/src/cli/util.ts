@@ -46,7 +46,7 @@ export function getStaticJs() {
 }
 
 export function createQueryJs(interfaceName: string, tableName: string) {
-  return `  this.${interfaceName}= new query_1.Query('${tableName}');`;
+  return `  this.${interfaceName} = new query_1.Query('${tableName}');`;
 }
 
 export function createAuroClientJs(actionsString: string) {
@@ -63,7 +63,7 @@ export function createQuery(interfaceName: string) {
 }
 
 export function createAuroClient(actionsString: string) {
-  return `export declare class AuroClient {\n  constructor(); {}\n\n${actionsString}\n
+  return `export declare class AuroClient {\n  constructor()\n\n${actionsString}\n
     async queryRaw<T>(query: string): Promise<T | null> {
       return Query.raw<T>(query);
     }
@@ -232,6 +232,6 @@ type DateFilter = {
 
 export type StringField = StringFilter | string;
 export type DateField = DateFilter | string;
-export const SCHEMA = process.env.SCHEMA || 'public';
 `;
 }
+// export const SCHEMA = process.env.SCHEMA || 'public'; Not sure about this one
